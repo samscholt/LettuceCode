@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RecipeService } from '../recipe.service'
 
 @Component({
   selector: 'app-search-criteria',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchCriteriaComponent implements OnInit {
 
-  constructor() { }
+  constructor(private Recipe : RecipeService) { }
+userInput: string;
+recipes:[]
 
   ngOnInit() {
-  }
 
+    this.Recipe.getRecipes(this.userInput).subscribe( (response: any) => this.recipes= response.hits.recipe);
+  }
 }
