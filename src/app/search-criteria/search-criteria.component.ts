@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { RecipeService } from '../recipe.service'
+import { EventEmitter } from '@angular/core';
+
 
 @Component({
   selector: 'app-search-criteria',
@@ -8,12 +10,17 @@ import { RecipeService } from '../recipe.service'
 })
 export class SearchCriteriaComponent implements OnInit {
 
-  constructor(private Recipe : RecipeService) { }
-userInput: string;
-recipes:[]
+  @Output() search = new EventEmitter<string>()
+
+  constructor() { }
+  
 
   ngOnInit() {
 
-    this.Recipe.getRecipes(this.userInput).subscribe( (response: any) => this.recipes= response.hits.recipe);
   }
+
+ onSubmit(userInput){
+      this.search.emit(userInput)
+    }
+
 }
