@@ -1,1 +1,9 @@
-<p>favorites-page works!</p>
+<h1>My Favorites</h1>>
+<div class="favs" *ngFor="">
+    <img src=>"{{ recipe.thumbnail }}">
+    <div class="fav-body">
+        <p>{{ recipe.selfText }}</p>
+        <p>{{ recipe.calories }}</p>
+        <p> {{ recipe.diet }} </p>
+        <a href="{{ recipe.url }}" class="btn">See Original Post</a>
+</div>
