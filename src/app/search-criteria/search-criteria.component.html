@@ -1,8 +1,27 @@
-<div  class="searchBar">
-   <input [(ngModel)]="userInput" type="text">
-   <button (click)= "onSubmit(userInput)">Submit</button>
-</div>
 
-
+<div>
+      <form class="criteria">
+          <div id="keyword">
+              <h4>Search Keyword</h4>
+              <input [(ngModel)]="userInput" type="text" placeholder="Find a recipe">
+          </div>
+          <div class="cals">
+              <h4>Calories</h4>
+              <input type="number" name="quantity" min="1" max="2000">
+          </div>
+          <div class="dietTitle">
+              <h4>Dietary Restrictions</h4>
+          </div>
+          <div class="restrictions">
+              <input type="checkbox" name="gf" value="GF">Gluten Free<br>
+              <input type="checkbox" name="vegetarian" value="VG">Vegetarian<br>
+              <input type="checkbox" name="vegan" value="VN">Vegan<br>
+              <input type="checkbox" name="df" value="DF">Dairy Free<br>
+          </div>
+          <div class="sendIt">
+              <button (click)= "onSubmit(userInput)" type="button">Search</button>
+          </div>
+      </form>
+  </div>
 
 
