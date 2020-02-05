@@ -19,8 +19,14 @@ export class SearchCriteriaComponent implements OnInit {
 
   }
 
- onSubmit(userInput){
-      this.search.emit(userInput)
+ onSubmit(userInput, calories, gf, vegetarian, vegan, df){
+      console.log(userInput);
+      console.log(calories);
+      console.log(gf);
+      console.log(vegetarian);
+      console.log(vegan);
+      console.log(df);
+      this.search.emit(userInput);
     }
 
 }
