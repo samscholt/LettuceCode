@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit,} from '@angular/core';
 import { RecipeService } from '../recipe.service'
 
 
@@ -13,19 +13,14 @@ export class SearchCriteriaComponent implements OnInit {
 constructor(private Recipe : RecipeService) { }
   
  recipes;
- calories: number;
- gf: boolean;
- vegan:boolean;
- vegetarian:boolean;
- df:boolean
+ 
 
   ngOnInit() {
 
   }
 
- onSubmit(userInput,calories,gf,vegan,vegetarian,df){
-   
-      return this.Recipe.getRecipes(userInput,calories,gf,vegan,vegetarian,df).subscribe(data => this.recipes = data)
+ onSubmit(userInput, calories){
+      return this.Recipe.getRecipes(userInput,calories).subscribe((data:any) => this.recipes = data.hits)
 
     }
 
