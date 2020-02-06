@@ -1,5 +1,6 @@
-import { Component, OnInit,} from '@angular/core';
+import { Component, OnInit, Output, Input} from '@angular/core';
 import { RecipeService } from '../recipe.service'
+import { EventEmitter } from '@angular/core';
 
 
 @Component({
@@ -11,17 +12,17 @@ export class SearchCriteriaComponent implements OnInit {
 
 
 constructor(private Recipe : RecipeService) { }
-  
- recipes;
- 
+@Input() recipes:[]
 
+ 
   ngOnInit() {
 
   }
+  onSubmit(userInput, calories,vegetarian,vegan){
+    return this.Recipe.getRecipes(userInput,calories,vegetarian,vegan).subscribe((data:any) => this.recipes = data.hits)
 
- onSubmit(userInput, calories){
-      return this.Recipe.getRecipes(userInput,calories).subscribe((data:any) => this.recipes = data.hits)
-
-    }
+    
+  }
+ 
 
 }
