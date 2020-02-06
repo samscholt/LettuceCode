@@ -1,8 +1,31 @@
-<p>search-criteria works!</p>
 
-<div *ngFor="let recipe of recipes" >
+<div>
+      <form class="criteria">
+          <div id="keyword">
+              <h4>Search Keyword</h4>
+              <input [(ngModel)]="userInput" name="userInput" type="text" placeholder="Find a recipe">
+          </div>
+          <div class="cals">
+              <h4>Calories</h4>
+              <input type="number" [(ngModel)]="calories" name="calories" min="1" max="2000">
+          </div>
+          <div class="dietTitle">
+              <h4>Dietary Restrictions</h4>
+          </div>
+          <div class="restrictions">
+              <input type="checkbox" [(ngModel)]="gf" name="gf" value="GF">Gluten Free<br>
+              <input type="checkbox" [(ngModel)]="vegetarian" name="vegetarian" value="VG">Vegetarian<br>
+              <input type="checkbox" [(ngModel)]="vegan" name="vegan" value="VN">Vegan<br>
+              <input type="checkbox" [(ngModel)]="df" name="df" value="DF">Dairy Free<br>
+          </div>
+          <div class="sendIt">
+              <button (click)= "onSubmit(userInput, calories, gf, vegetarian, vegan, df)" type="button">Search</button>
+          </div>
+      </form>
+  </div>
 
-   <p>{{recipe.url}}</p> 
-   <p>{{recipe.image}}</p> 
-
+<div>
+  <app-recipe-list></app-recipe-list>
 </div>
+
+
