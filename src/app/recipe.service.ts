@@ -16,7 +16,7 @@ export class RecipeService {
   constructor( private http: HttpClient) { }
   
 
-  getRecipeURL(q, calories, vegetarian, vegan, lactose) {
+  getRecipeURL(q, calories, vegetarian, vegan, treenuts) {
   
     
     let url = `${this.recipeUrl}?q=${q}&app_id=${this.app_id}&app_key=${this.api_key}`;
@@ -28,26 +28,26 @@ export class RecipeService {
 
 
      if(vegan){
-        vegan = 'vegan'
+        vegan = 'vegan';
          url += `&health=${vegan}`;
      }
     
     if(vegetarian){
-        vegetarian = 'vegetarian'
+        vegetarian = 'vegetarian';
        url += `&health=${vegetarian}"`;
       }
 
-    if(lactose){
-      lactose = 'milk'
-      url += `&caution=${lactose}`;
+    if(treenuts){
+      treenuts = 'Tree-Nut-Free';
+      url += `&health=${treenuts}`;
     }
    
     return url;
 
   }
 
-  getRecipes(userInput,calories,vegetarian,vegan, lactose){
-    return this.http.get(this.getRecipeURL(userInput, calories,vegetarian,vegan, lactose));
+  getRecipes(userInput,calories,vegetarian,vegan, treenuts){
+    return this.http.get(this.getRecipeURL(userInput, calories,vegetarian,vegan, treenuts));
   }
 
 }
