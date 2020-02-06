@@ -1,16 +1,18 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {map} from 'rxjs/Operators'
-
+import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/Operators';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class RecipeService {
 
   recipeUrl : string =  "https://api.edamam.com/search";
   app_id : string = '453ed4ac';
   api_key : string = '4fe28da74eeb88aac62510fabf639157';
+  caloriesmin: string;
+  caloriesmax: string;
 
   constructor( private http: HttpClient) { }
 
@@ -19,7 +21,7 @@ export class RecipeService {
   }
 
   getRecipes(search){
-    return this.http.get(this.getRecipeURL(search) + `&from=0&to=3&calories=591-722&health=alcohol-free`)
+    return this.http.get(this.getRecipeURL(search) + `&from=0&to=3&calories=${this.caloriesmin}-${this.caloriesmax}&health=alcohol-free`)
   }
 
 }

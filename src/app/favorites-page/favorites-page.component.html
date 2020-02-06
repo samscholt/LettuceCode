@@ -1,9 +1,11 @@
-<h1>My Favorites</h1>>
-<div class="favs" *ngFor="">
-    <img src=>"{{ recipe.thumbnail }}">
+<h1>My Favorites</h1>
+<div class="favs">
+    <img src= "{{ recipe.thumbnail }}">
     <div class="fav-body">
-        <p>{{ recipe.selfText }}</p>
+        <p>{{ recipe.label }}</p>
         <p>{{ recipe.calories }}</p>
         <p> {{ recipe.diet }} </p>
         <a href="{{ recipe.url }}" class="btn">See Original Post</a>
 </div>
+
+<!-- *ngFor="ss.sf" -->

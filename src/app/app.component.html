@@ -1,13 +1,7 @@
 <h1>Lettuce Code</h1>
-<!-- <div id="favoritos">
-    <app-favorites-page></app-favorites-page>
-</div> -->
-<!-- not quite sure how to implement the link for the favorites page -->
-<div id="home-page">
-    <div>
-        <app-search-criteria></app-search-criteria>
-    </div>
-    <div>
-        <app-recipe-list></app-recipe-list>
-    </div>
+<div>
+    <a routerLink = '' routerLinkActive= 'active'>Home</a>
+    <a routerLink = 'favorites' routerLinkActive= 'active'>Favorites</a>
+    <!-- <a routerLink = 'recipes/recipe:id' routerLinkActive= 'active'>Recipes</a>    -->
 </div>
+<router-outlet></router-outlet>
