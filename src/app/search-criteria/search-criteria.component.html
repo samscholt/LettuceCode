@@ -18,20 +18,16 @@
               <input type="checkbox" [(ngModel)]="df" name="df" value="DF">Dairy Free<br>
           </div>
           <div class="sendIt">
-              <button (click)= "onSubmit(userInput, calories, gf, vegetarian, vegan, df)" type="button">Search</button>
+              <button (click)= "onSubmit(userInput, calories)" type="button">Search</button>
           </div>
       </form>
 </div>
-<div class="home-page">
-    <app-recipe-list></app-recipe-list>
+<div class="card" *ngFor="let recipe of recipes">
+    <img src="{{ recipe.recipe.image}}">
+    <div class="card-body">
+        <p>{{recipe.recipe.url }}</p>
+        <p>{{ recipe.ingredientLines }}</p>
+        <p> {{ recipe.recipe.calories }} </p>
+        <a href="{{ recipe.url }}" class="btn">See Original Post</a>
+    </div>
 </div>
-
-
-
-
-
-<div>
-  <app-recipe-list></app-recipe-list>
-</div>
-
-
