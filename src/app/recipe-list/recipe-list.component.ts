@@ -11,8 +11,7 @@ import { SearchCriteriaComponent } from '../search-criteria/search-criteria.comp
 export class RecipeListComponent implements OnInit {
 
   constructor(private Recipe : RecipeService) { }
-  @Input() userInput : any
-
+  userInput : any
   recipes:any[]
   
   ngOnInit() {

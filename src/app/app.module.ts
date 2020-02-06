@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { SearchCriteriaComponent } from './search-criteria/search-criteria.component';
 import { RecipeListComponent } from './recipe-list/recipe-list.component';
 import { FavoritesPageComponent } from './favorites-page/favorites-page.component';
-import { FilterPipe } from './filter.pipe';
+import { RecipeService } from './recipe.service';
 
 @NgModule({
   declarations: [
@@ -15,7 +15,7 @@ import { FilterPipe } from './filter.pipe';
     SearchCriteriaComponent,
     RecipeListComponent,
     FavoritesPageComponent,
-    FilterPipe
+  
   ],
   imports: [
     BrowserModule,
@@ -23,7 +23,7 @@ import { FilterPipe } from './filter.pipe';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [RecipeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
