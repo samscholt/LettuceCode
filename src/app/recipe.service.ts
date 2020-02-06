@@ -24,10 +24,10 @@ export class RecipeService {
     
     let url = `${this.recipeUrl}?q=${q}&app_id=${this.app_id}&app_key=${this.api_key}`;
 
-    url += `&from=0&to=6&`;
+    url += `&from=0&to=6`;
 
     if (calories)
-     url += `&calories=${calories}`;
+     url += `&calories=10-${calories}`;
 
 
      if(vegan){
@@ -37,7 +37,7 @@ export class RecipeService {
     
     if(vegetarian){
         vegetarian = 'vegetarian'
-       url += `&health=${vegetarian}`;
+       url += `&health=${vegetarian}"`;
       }
 
 
