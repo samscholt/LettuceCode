@@ -1,10 +1,18 @@
- <app-search-criteria (submitted)= "onSubmit($event)">
+<app-search-criteria (search)= "loadResults($event)">
 
 
 
 
- </app-search-criteria>
- 
+</app-search-criteria>
 
 
- 
+ <div class="card" *ngFor="let recipe of recipes">
+    <img src="{{ recipe.recipe.image}}">
+    <div class="card-body">
+        <!-- <p> Original link:{{recipe.recipe.url }}</p> -->
+        <p> Ingredients: {{ recipe.recipe.ingredientLines }}</p>
+        <p> Calories: {{ recipe.recipe.calories }} </p>
+        <p>{{recipe.healthLabels}}</p>
+        <a href="{{ recipe.recipe.url }}" class="btn btn-primary">See Original Post</a>
+    </div>
+</div>

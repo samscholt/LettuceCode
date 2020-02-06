@@ -11,19 +11,26 @@ import { EventEmitter } from 'events';
 })
 export class RecipeListComponent implements OnInit {
  
-  @Output() submitted = new EventEmitter()
 
 
-  constructor(private search : SearchCriteriaComponent) { }
+  constructor(private search : SearchCriteriaComponent, private Recipe : RecipeService) { }
   userInput : any
-  @Input() recipes=[]
+  recipes=[];
    
   ngOnInit() {
 
   }
 
-   onSubmit(userInput, calories,vegetarian,vegan,lactose){
-    this.submitted.emit(userInput,calories,vegetarian,vegan, lactose)
+   loadResults(searchResults : any[]){
+     console.log('it worked');
+     const userInput = searchResults[0];
+     const calories = searchResults[1];
+     const vegetarian = searchResults[2];
+     const vegan = searchResults[3];
+     const treenuts = searchResults[4];
+
+
+     this.Recipe.getRecipes(userInput,calories,vegetarian,vegan, treenuts).subscribe((data:any) => this.recipes = data.hits);
  
    }
 

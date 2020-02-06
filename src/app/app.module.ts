@@ -22,7 +22,7 @@ import { RecipeService } from './recipe.service';
     HttpClientModule,
     FormsModule
   ],
-  providers: [RecipeService],
+  providers: [RecipeService, SearchCriteriaComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
