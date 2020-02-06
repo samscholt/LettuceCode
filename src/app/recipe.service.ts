@@ -18,14 +18,12 @@ export class RecipeService {
 
   getRecipeURL(q, calories, vegetarian, vegan, treenuts) {
   
-    
     let url = `${this.recipeUrl}?q=${q}&app_id=${this.app_id}&app_key=${this.api_key}`;
 
     url += `&from=0&to=10`;
 
     if (calories)
      url += `&calories=10-${calories}`;
-
 
      if(vegan){
         vegan = 'vegan';
@@ -38,12 +36,11 @@ export class RecipeService {
       }
 
     if(treenuts){
-      treenuts = 'Tree-Nut-Free';
-      url += `&health=${treenuts}`;
+      treenuts = 'tree-nut-free';
+      url += `&Health=${treenuts}`;
     }
    
     return url;
-
   }
 
   getRecipes(userInput,calories,vegetarian,vegan, treenuts){

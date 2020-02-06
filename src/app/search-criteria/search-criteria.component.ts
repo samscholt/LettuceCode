@@ -13,16 +13,17 @@ export class SearchCriteriaComponent implements OnInit {
 
 constructor(private Recipe : RecipeService) { }
 @Input() recipes:[]
-
+@Output() submitted = new EventEmitter()
  
   ngOnInit() {
 
   }
-  onSubmit(userInput, calories,vegetarian,vegan, lactose){
-    return this.Recipe.getRecipes(userInput,calories,vegetarian,vegan, lactose).subscribe((data:any) => this.recipes = data.hits)
-
-    
-  }
+  
+  onSubmit(userInput, calories,vegetarian,vegan,lactose){
+    console.log('working')
+    this.submitted.emit({userInput,calories,vegetarian,vegan, lactose})
+ 
+   }
  
 
 }

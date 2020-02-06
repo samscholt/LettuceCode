@@ -10,21 +10,23 @@ import { EventEmitter } from 'events';
   styleUrls: ['./recipe-list.component.css']
 })
 export class RecipeListComponent implements OnInit {
- 
-  @Output() submitted = new EventEmitter()
+ recipes;
+  
 
 
-  constructor(private search : SearchCriteriaComponent) { }
+  constructor(private Recipe : RecipeService) { }
   userInput : any
-  @Input() recipes=[]
+  
    
   ngOnInit() {
+    
 
   }
+  onSubmit({userInput, calories,vegetarian,vegan, treenuts}){
+    return this.Recipe.getRecipes(userInput,calories,vegetarian,vegan, treenuts).subscribe((data:any) => this.recipes = data.hits)
 
-   onSubmit(userInput, calories,vegetarian,vegan,lactose){
-    this.submitted.emit(userInput,calories,vegetarian,vegan, lactose)
- 
-   }
+    
+  }
+  
 
 }
