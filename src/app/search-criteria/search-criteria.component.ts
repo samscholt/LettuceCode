@@ -18,8 +18,8 @@ constructor(private Recipe : RecipeService) { }
   ngOnInit() {
 
   }
-  onSubmit(userInput, calories,vegetarian,vegan){
-    return this.Recipe.getRecipes(userInput,calories,vegetarian,vegan).subscribe((data:any) => this.recipes = data.hits)
+  onSubmit(userInput, calories,vegetarian,vegan, lactose){
+    return this.Recipe.getRecipes(userInput,calories,vegetarian,vegan, lactose).subscribe((data:any) => this.recipes = data.hits)
 
     
   }

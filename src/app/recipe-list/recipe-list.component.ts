@@ -1,5 +1,5 @@
 import { Component, OnInit,Input, Output } from '@angular/core';
-import { RecipeService } from '../recipe.service'
+import { RecipeService } from '../recipe.service';
 import { SearchCriteriaComponent } from '../search-criteria/search-criteria.component';
 import { EventEmitter } from 'events';
  
@@ -22,8 +22,8 @@ export class RecipeListComponent implements OnInit {
 
   }
 
-   onSubmit(userInput, calories,vegetarian,vegan){
-    this.submitted.emit(userInput,calories,vegetarian,vegan)
+   onSubmit(userInput, calories,vegetarian,vegan,lactose){
+    this.submitted.emit(userInput,calories,vegetarian,vegan, lactose)
  
    }
 
