@@ -12,6 +12,7 @@ export class RecipeService {
   recipeUrl : string =  "https://api.edamam.com/search";
   app_id : string = '453ed4ac';
   api_key : string = '4fe28da74eeb88aac62510fabf639157';
+  favorites = [];
 
   constructor( private http: HttpClient) { }
   
