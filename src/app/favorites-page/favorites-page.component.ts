@@ -6,10 +6,13 @@ import { RecipeService } from '../recipe.service';
   templateUrl: './favorites-page.component.html',
   styleUrls: ['./favorites-page.component.css']
 })
+
 export class FavoritesPageComponent implements OnInit {
 
-  favorites:[]
-  constructor(private Recipe: RecipeService) { }
+
+  constructor(private Recipe: RecipeService) {
+    
+  }
 
   ngOnInit() {
 

@@ -3,15 +3,5 @@
  </app-search-criteria>
  
 
- <div class="card" *ngFor="let recipe of recipes">
-        <img src="{{ recipe.recipe.image}}">
-        <div class="card-body">
-            <!-- <p> Original link:{{recipe.recipe.url }}</p> -->
-            <p> Ingredients: {{ recipe.recipe.ingredientLines }}</p>
-            <p> Calories: {{ recipe.recipe.calories }} </p>
-            <p>{{recipe.healthLabels}}</p>
-           <i class="far fa-heart"></i> 
-            <a href="{{ recipe.recipe.url }}" class="btn btn-primary">See Original Post</a>
-        </div>
-    </div>
- 
+<app-recipe-details *ngFor="let recipe of recipes" [recipe]= 'recipe'></app-recipe-details>
+  
