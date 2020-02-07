@@ -1,0 +1,15 @@
+<div class="card" >
+    <img src="{{ recipe.recipe.image}}">
+    <div class="card-body">
+        <!-- <p> Original link:{{recipe.recipe.url }}</p> -->
+        <p>{{recipe.recipe.label}}</p>
+        <button (click)= 'showDetails()'>More Details</button>
+    </div>
+    <div class= 'details' *ngIf="show">
+        <p> Ingredients: {{ recipe.recipe.ingredientLines }}</p>
+        <p> Calories: {{ recipe.recipe.calories | number: '1.0-0'}} </p>
+        <p>{{recipe.healthLabels}}</p>
+        <a href="{{ recipe.recipe.url }}" class="btn btn-primary">See Original Post</a>
+        <button (click)= 'closeDetails()'> Close</button>
+    </div>
+</div>

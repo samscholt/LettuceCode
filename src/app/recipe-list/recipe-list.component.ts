@@ -23,6 +23,7 @@ export class RecipeListComponent implements OnInit {
 
   }
   onSubmit({userInput, calories,vegetarian,vegan, treenuts}){
+    console.log('getting recipes');
     return this.Recipe.getRecipes(userInput,calories,vegetarian,vegan, treenuts).subscribe((data:any) => this.recipes = data.hits)
 
     

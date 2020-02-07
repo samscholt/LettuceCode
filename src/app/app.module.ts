@@ -8,6 +8,7 @@ import { SearchCriteriaComponent } from './search-criteria/search-criteria.compo
 import { RecipeListComponent } from './recipe-list/recipe-list.component';
 import { FavoritesPageComponent } from './favorites-page/favorites-page.component';
 import { RecipeService } from './recipe.service';
+import { RecipeDetailsComponent } from './recipe-details/recipe-details.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { RecipeService } from './recipe.service';
     SearchCriteriaComponent,
     RecipeListComponent,
     FavoritesPageComponent,
+    RecipeDetailsComponent,
   
   ],
   imports: [

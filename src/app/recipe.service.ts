@@ -48,9 +48,3 @@ export class RecipeService {
   }
 
 }
-<<<<<<< HEAD
-
-
-//https://api.edamam.com/search?q=chicken&app_id=453ed4ac&app_key=4fe28da74eeb88aac62510fabf639157&from=0&to=6&calories=591-722&health=alcohol-free
-=======
->>>>>>> 5169ddc04ee96e1c8980e559a20cda14ec9d7fab
