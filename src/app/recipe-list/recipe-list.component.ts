@@ -1,7 +1,7 @@
 import { Component, OnInit,Input, Output } from '@angular/core';
 import { RecipeService } from '../recipe.service';
 import { SearchCriteriaComponent } from '../search-criteria/search-criteria.component';
-import { EventEmitter } from 'events';
+// import { EventEmitter } from 'events';
  
 
 @Component({
@@ -10,19 +10,15 @@ import { EventEmitter } from 'events';
   styleUrls: ['./recipe-list.component.css']
 })
 export class RecipeListComponent implements OnInit {
- 
-
-
+  
   constructor(private search : SearchCriteriaComponent, private Recipe : RecipeService) { }
   userInput : any
   recipes=[];
    
   ngOnInit() {
-
   }
 
    loadResults(searchResults : any[]){
-     console.log('it worked');
      const userInput = searchResults[0];
      const calories = searchResults[1];
      const vegetarian = searchResults[2];
@@ -32,6 +28,10 @@ export class RecipeListComponent implements OnInit {
 
      this.Recipe.getRecipes(userInput,calories,vegetarian,vegan, treenuts).subscribe((data:any) => this.recipes = data.hits);
  
+   }
+
+   addFavorite(yummy) {
+    this.Recipe.favorites.push(yummy);
    }
 
 }
