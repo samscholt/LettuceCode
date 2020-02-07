@@ -18,6 +18,10 @@ export class RecipeListComponent implements OnInit {
   ngOnInit() {
   }
 
+  onSubmit({userInput, calories,vegetarian,vegan, treenuts}){
+    return this.Recipe.getRecipes(userInput,calories,vegetarian,vegan, treenuts).subscribe((data:any) => this.recipes = data.hits)
+  }
+
    loadResults(searchResults : any[]){
      const userInput = searchResults[0];
      const calories = searchResults[1];

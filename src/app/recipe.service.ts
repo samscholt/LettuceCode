@@ -35,7 +35,7 @@ export class RecipeService {
     
     if(vegetarian){
         vegetarian = 'vegetarian';
-       url += `&health=${vegetarian}"`;
+       url += `&health=${vegetarian}`;
       }
 
     if(treenuts){
