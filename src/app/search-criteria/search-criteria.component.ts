@@ -19,7 +19,7 @@ constructor() { }
 
   }
   onSubmit(userInput, calories,vegetarian,vegan, treenuts){
-    this.submitted.emit([userInput, calories,vegetarian,vegan, treenuts]);
+    this.submitted.emit({userInput, calories,vegetarian,vegan, treenuts});
   }
  
 

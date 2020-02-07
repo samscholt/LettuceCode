@@ -19,9 +19,9 @@ export class RecipeListComponent implements OnInit {
   }
 
   onSubmit({userInput, calories,vegetarian,vegan, treenuts}){
-    console.log('in on submit');
     return this.Recipe.getRecipes(userInput,calories,vegetarian,vegan, treenuts).subscribe((data:any) => this.recipes = data.hits)
   }
+  
   addFavorite(yummy) {
     this.Recipe.favorites.push(yummy);
    }
