@@ -47,4 +47,8 @@ export class RecipeService {
     return this.http.get(this.getRecipeURL(userInput, calories,vegetarian,vegan, treenuts));
   }
 
+
+  
+
+
 }
