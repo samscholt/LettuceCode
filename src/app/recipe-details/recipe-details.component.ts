@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { RecipeService } from '../recipe.service';
 
 @Component({
   selector: 'app-recipe-details',
@@ -10,7 +11,7 @@ export class RecipeDetailsComponent implements OnInit {
 
  show: boolean = false;
 
-  constructor() { }
+  constructor(private Recipe : RecipeService) { }
 
   ngOnInit() {
   }
@@ -22,5 +23,10 @@ export class RecipeDetailsComponent implements OnInit {
   closeDetails(){
     this.show= false;
   }
+
+  addFavorite(yummy) {
+    console.log(this.Recipe)
+    this.Recipe.favorites.push(yummy);
+   }
 
 }

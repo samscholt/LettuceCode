@@ -25,7 +25,7 @@ import { RecipeDetailsComponent } from './recipe-details/recipe-details.componen
     HttpClientModule,
     FormsModule
   ],
-  providers: [RecipeService],
+  providers: [RecipeService, SearchCriteriaComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,11 +1,12 @@
 <h1>My Favorites</h1>
-<div class="favs">
-    <img src= "{{ recipe.thumbnail }}">
-    <div class="fav-body">
-        <p>{{ recipe.label }}</p>
-        <p>{{ recipe.calories }}</p>
-        <p> {{ recipe.diet }} </p>
-        <a href="{{ recipe.url }}" class="btn">See Original Post</a>
+<div class="card" *ngFor="let recipe of Recipe.favorites">
+    <img src="{{ recipe.recipe.image}}">
+    <div class="card-body">
+        <i class="far fa-heart" (click)="addFavorite(recipe)"></i>
+        <p> Ingredients: {{ recipe.recipe.ingredientLines }}</p>
+        <p> Calories: {{ recipe.recipe.calories }} </p>
+        <p>{{recipe.healthLabels}}</p>
+        <a href="{{ recipe.recipe.url }}" class="btn btn-primary">See Original Post</a>
+    </div>
 </div>
 
-<!-- *ngFor="ss.sf" -->

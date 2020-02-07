@@ -11,19 +11,16 @@ import { EventEmitter } from '@angular/core';
 export class SearchCriteriaComponent implements OnInit {
 
 
-constructor(private Recipe : RecipeService) { }
-@Input() recipes:[]
-@Output() submitted = new EventEmitter()
+constructor() { }
+@Output() submitted = new EventEmitter();
+
  
   ngOnInit() {
 
   }
-  
-  onSubmit(userInput, calories,vegetarian,vegan,lactose){
-    console.log('working')
-    this.submitted.emit({userInput,calories,vegetarian,vegan, lactose})
- 
-   }
+  onSubmit(userInput, calories,vegetarian,vegan, treenuts){
+    this.submitted.emit([userInput, calories,vegetarian,vegan, treenuts]);
+  }
  
 
 }

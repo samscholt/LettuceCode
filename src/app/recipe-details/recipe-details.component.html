@@ -1,8 +1,8 @@
 <div class="card" >
     <img src="{{ recipe.recipe.image}}">
     <div class="card-body">
-        <!-- <p> Original link:{{recipe.recipe.url }}</p> -->
         <p>{{recipe.recipe.label}}</p>
+        <i class="far fa-heart" (click)="addFavorite(recipe)"></i>
         <button (click)= 'showDetails()'>More Details</button>
     </div>
     <div class= 'details' *ngIf="show">
