@@ -19,7 +19,6 @@ export class RecipeService {
 
   getRecipeURL(q, calories, vegetarian, vegan, treenuts) {
   
-    
     let url = `${this.recipeUrl}?q=${q}&app_id=${this.app_id}&app_key=${this.api_key}`;
 
     url += `&from=0&to=10`;
