@@ -1,7 +1,6 @@
 import { Component, OnInit,Input, Output } from '@angular/core';
 import { RecipeService } from '../recipe.service';
 import { SearchCriteriaComponent } from '../search-criteria/search-criteria.component';
-// import { EventEmitter } from 'events';
  
 
 @Component({
@@ -21,7 +20,7 @@ export class RecipeListComponent implements OnInit {
   onSubmit({userInput, calories,vegetarian,vegan, treenuts}){
     return this.Recipe.getRecipes(userInput,calories,vegetarian,vegan, treenuts).subscribe((data:any) => this.recipes = data.hits)
   }
-  
+
   addFavorite(yummy) {
     this.Recipe.favorites.push(yummy);
    }
