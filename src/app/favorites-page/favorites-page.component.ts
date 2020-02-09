@@ -8,7 +8,7 @@ import { RecipeService } from '../recipe.service';
 })
 
 export class FavoritesPageComponent implements OnInit {
-
+ 
 
   constructor(private Recipe: RecipeService) {
     
@@ -16,7 +16,13 @@ export class FavoritesPageComponent implements OnInit {
 
   ngOnInit() {
 
+
     
   }
 
+
+  removeFav(i){
+    this.Recipe.favorites.splice(i,1)
+
+  }
 }

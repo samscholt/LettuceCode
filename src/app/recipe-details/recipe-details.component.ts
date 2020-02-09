@@ -6,14 +6,17 @@ import { RecipeService } from '../recipe.service';
   templateUrl: './recipe-details.component.html',
   styleUrls: ['./recipe-details.component.css']
 })
+
+ 
 export class RecipeDetailsComponent implements OnInit {
  @Input() recipe: any;
-
+  toggle = false;
  show: boolean = false;
-
+ 
   constructor(private Recipe : RecipeService) { }
 
   ngOnInit() {
+   
   }
 
   showDetails(){
@@ -28,5 +31,10 @@ export class RecipeDetailsComponent implements OnInit {
     console.log(this.Recipe)
     this.Recipe.favorites.push(yummy);
    }
+
+   clicked(){
+     this.toggle = true
+   }
+   
 
 }

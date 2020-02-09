@@ -2,7 +2,7 @@
     <img src="{{ recipe.recipe.image}}">
     <div class="card-body">
         <p>{{recipe.recipe.label}}</p>
-        <i class="far fa-heart" (click)="addFavorite(recipe)"></i>
+        <i [ngClass]="{'heart': toggle}" (click)= "clicked()" class=" heart fas fa-heart" (click)="addFavorite(recipe)"></i>
         <button (click)= 'showDetails()'>More Details</button>
     </div>
     <div class= 'details' *ngIf="show">
