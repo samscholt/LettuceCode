@@ -25,3 +25,8 @@ a {
     font-size: 16px;
     border-radius: 5px;
 }
+
+.card {
+    display: flex;
+    justify-content: center;
+}

@@ -13,12 +13,17 @@ export class RecipeListComponent implements OnInit {
   constructor(private search : SearchCriteriaComponent, private Recipe : RecipeService) { }
   userInput : any;
   recipes=[];
+  searching: boolean = false;
    
   ngOnInit() {
   }
 
   onSubmit({userInput, calories,vegetarian,vegan, treenuts}){
-    return this.Recipe.getRecipes(userInput,calories,vegetarian,vegan, treenuts).subscribe((data:any) => this.recipes = data.hits)
+    this.searching = true;
+    return this.Recipe.getRecipes(userInput,calories,vegetarian,vegan, treenuts).subscribe(
+    ((data:any) => this.recipes = data.hits),
+    (() => this.searching = false));
+
   }
 
   addFavorite(yummy) {

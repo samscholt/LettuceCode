@@ -14,15 +14,11 @@ export class FavoritesPageComponent implements OnInit {
     
   }
 
-  ngOnInit() {
-
-
-    
+  ngOnInit() { 
   }
 
 
   removeFav(i){
     this.Recipe.favorites.splice(i,1)
-
   }
 }
