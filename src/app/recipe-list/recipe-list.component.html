@@ -3,6 +3,9 @@
  </app-search-criteria>
  
  <p *ngIf="searching">Fetching data...</p>
-
+<div class="container">
 <app-recipe-details *ngFor="let recipe of recipes" [recipe]= 'recipe'></app-recipe-details>
   
+
+</div>
+
