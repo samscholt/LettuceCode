@@ -5,7 +5,16 @@
 .heart{
     color: red;
 }
+#details{
+    font-size: 15px;
+    margin-left: 20px;
+}
 
+#title{
+    font-size: 20px;
+    margin-bottom: 15px;
+ 
+}
 .card{
     display: flex;
     justify-content: center;
@@ -13,7 +22,7 @@
     margin:0 auto;
     padding: 20px;
     background-color: white;
-    width: 50%;
+    width: 40rem;
     border-radius: 5px;
     margin-bottom: 20px;
 }
@@ -21,3 +30,8 @@
 .item{
     margin: 20px;
 }
+
+.card-body{
+    margin: 20px;
+}
+

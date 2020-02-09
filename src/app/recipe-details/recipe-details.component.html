@@ -1,9 +1,9 @@
 <div class="card" >
     <img src="{{ recipe.recipe.image}}">
     <div class="card-body">
-        <p>{{recipe.recipe.label}}</p>
+        <p id="title">{{recipe.recipe.label}}</p>
         <i [ngClass]="{'heart': toggle}" (click)= "clicked()" class=" heart fas fa-heart" (click)="addFavorite(recipe)"></i>
-        <button (click)= 'showDetails()'>More Details</button>
+        <button id= "details"(click)= 'showDetails()'>More Details</button>
     </div>
     <div class= 'details' *ngIf="show">
         <p> Ingredients: {{ recipe.recipe.ingredientLines }}</p>
