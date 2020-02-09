@@ -12,7 +12,7 @@ import { SearchCriteriaComponent } from '../search-criteria/search-criteria.comp
 export class RecipeListComponent implements OnInit {
   
   constructor(private search : SearchCriteriaComponent, private Recipe : RecipeService) { }
-  userInput : any
+  userInput : any;
   recipes=[];
    
   ngOnInit() {
@@ -21,21 +21,11 @@ export class RecipeListComponent implements OnInit {
   onSubmit({userInput, calories,vegetarian,vegan, treenuts}){
     return this.Recipe.getRecipes(userInput,calories,vegetarian,vegan, treenuts).subscribe((data:any) => this.recipes = data.hits)
   }
-
-   loadResults(searchResults : any[]){
-     const userInput = searchResults[0];
-     const calories = searchResults[1];
-     const vegetarian = searchResults[2];
-     const vegan = searchResults[3];
-     const treenuts = searchResults[4];
-
-
-     this.Recipe.getRecipes(userInput,calories,vegetarian,vegan, treenuts).subscribe((data:any) => this.recipes = data.hits);
- 
-   }
-
-   addFavorite(yummy) {
+  
+  addFavorite(yummy) {
     this.Recipe.favorites.push(yummy);
    }
+
+   
 
 }

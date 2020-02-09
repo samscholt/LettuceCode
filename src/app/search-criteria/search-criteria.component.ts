@@ -12,14 +12,14 @@ export class SearchCriteriaComponent implements OnInit {
 
 
 constructor() { }
-@Output() search = new EventEmitter();
+@Output() submitted = new EventEmitter();
 
  
   ngOnInit() {
 
   }
   onSubmit(userInput, calories,vegetarian,vegan, treenuts){
-    this.search.emit([userInput, calories,vegetarian,vegan, treenuts]);
+    this.submitted.emit({userInput, calories,vegetarian,vegan, treenuts});
   }
  
 

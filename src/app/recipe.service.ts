@@ -26,7 +26,6 @@ export class RecipeService {
     if (calories)
      url += `&calories=10-${calories}`;
 
-
      if(vegan){
         vegan = 'vegan';
          url += `&health=${vegan}`;
@@ -38,16 +37,19 @@ export class RecipeService {
       }
 
     if(treenuts){
-      treenuts = 'Tree-Nut-Free';
-      url += `&health=${treenuts}`;
+      treenuts = 'tree-nut-free';
+      url += `&Health=${treenuts}`;
     }
    
     return url;
-
   }
 
   getRecipes(userInput,calories,vegetarian,vegan, treenuts){
     return this.http.get(this.getRecipeURL(userInput, calories,vegetarian,vegan, treenuts));
   }
+
+
+  
+
 
 }

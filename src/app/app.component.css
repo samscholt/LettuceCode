@@ -1,6 +1,18 @@
 h1 {
     display: flex;
     justify-content: center;
+    font-size: 50px;
+    margin: 20px;
+    font-family: 'Homemade Apple', cursive;
+    color: white;
+    font-weight: bold;
+
+}
+
+img{
+    height: 80px;
+    width: 88px;
+    
 }
 
 a {
