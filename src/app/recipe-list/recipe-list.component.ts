@@ -29,10 +29,6 @@ export class RecipeListComponent implements OnInit {
     
   }
 
-  addFavorite(yummy) {
-    this.Recipe.favorites.push(yummy);
-   }
-
    
 
 }

@@ -1,12 +1,7 @@
 <h1>My Favorites</h1>
-<div class="card" *ngFor="let recipe of Recipe.favorites; let i = index">
-    <img src="{{ recipe.recipe.image}}">
-    <div class="card-body">
-        <p> Ingredients: {{ recipe.recipe.ingredientLines }}</p>
-        <p> Calories: {{ recipe.recipe.calories }} </p>
-        <p>{{recipe.healthLabels}}</p>
-        <a href="{{ recipe.recipe.url }}" class="btn btn-primary">See Original Post</a>
-        <button (click)= "removeFav(i)">Remove Favorite</button>
-    </div>
-</div>
 
+<div class="container">
+    <h2 *ngIf="loading">Loading .....</h2>
+    <app-recipe-details *ngFor="let recipe of Recipe.favorites" [recipe]= 'recipe'></app-recipe-details>
+  
+</div>

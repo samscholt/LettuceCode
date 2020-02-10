@@ -10,7 +10,6 @@ import { RecipeService } from '../recipe.service';
  
 export class RecipeDetailsComponent implements OnInit {
  @Input() recipe: any;
-  toggle = false;
  show: boolean = false;
  
   constructor(private Recipe : RecipeService) { }
@@ -27,13 +26,21 @@ export class RecipeDetailsComponent implements OnInit {
     this.show= false;
   }
 
-  addFavorite(yummy) {
-    console.log(this.Recipe)
-    this.Recipe.favorites.push(yummy);
+  toggleFavorite(yummy) {
+    if (this.isAFavorite(yummy)) {
+      // find location of this recipe in Favorites
+      const locationInFaves = (recipe) => recipe.recipe.url === yummy.recipe.url;
+
+      // remove this recipe from Favorites
+      this.Recipe.favorites.splice(this.Recipe.favorites.findIndex(locationInFaves), 1);
+    }
+    else {
+      this.Recipe.favorites.push(yummy);
+    }
    }
 
-   clicked(){
-     this.toggle = true
+   isAFavorite(yummy) {
+     return this.Recipe.favorites.some(recipe => recipe.recipe.url === yummy.recipe.url);
    }
    
 
