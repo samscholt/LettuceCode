@@ -1,12 +1,11 @@
- <app-search-criteria (submitted)= "onSubmit($event)">
+<app-search-criteria (submitted)= "onSubmit($event)">
 
- </app-search-criteria>
- 
+</app-search-criteria>
+
 
 <div class="container">
-    <h2 *ngIf="loading">Loading .....</h2>
-    <h2 *ngIf="noData">No Recipes Found for Those Restrictions, Try Again.</h2>
-    <app-recipe-details *ngFor="let recipe of recipes" [recipe]= 'recipe'></app-recipe-details>
-  
+   <h2 *ngIf="loading">Loading .....</h2>
+   <h2 *ngIf="noData">No Recipes Found for Those Restrictions, Try Again.</h2>
+   <app-recipe-details *ngFor="let recipe of recipes" [recipe]= 'recipe'></app-recipe-details>
+ 
 </div>
-
