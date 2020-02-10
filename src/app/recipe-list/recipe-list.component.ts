@@ -9,21 +9,24 @@ import { SearchCriteriaComponent } from '../search-criteria/search-criteria.comp
   styleUrls: ['./recipe-list.component.css']
 })
 export class RecipeListComponent implements OnInit {
-  
+   
   constructor(private search : SearchCriteriaComponent, private Recipe : RecipeService) { }
   userInput : any;
   recipes=[];
-   
+   loading= false;
   ngOnInit() {
   }
 
-  searching: boolean = false;
+ 
 
   onSubmit({userInput, calories,vegetarian,vegan, treenuts}){
-    this.searching = true;
-    return this.Recipe.getRecipes(userInput,calories,vegetarian,vegan, treenuts).subscribe(
-    ((data:any) => this.recipes = data.hits),
-    (() => this.searching = false));
+    this.loading =true
+   this.Recipe.getRecipes(userInput,calories,vegetarian,vegan, treenuts).subscribe( (data:any) => {
+     this.recipes = data.hits
+     this.loading=false
+   })
+   
+    
   }
 
   addFavorite(yummy) {
