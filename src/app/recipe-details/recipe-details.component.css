@@ -1,4 +1,20 @@
+.fa-heart{
+    color: black;
+}
 
+.heart{
+    color: red;
+}
+#details{
+    font-size: 15px;
+    margin-left: 20px;
+}
+
+#title{
+    font-size: 20px;
+    margin-bottom: 15px;
+ 
+}
 .card{
     display: flex;
     justify-content: center;
@@ -17,12 +33,5 @@
 
 .card-body{
     margin: 20px;
-}
-
-h1{
-    font-family: fantasy;
-    text-align: center;
-    font-size: 5em;
-    color: white;
 }
 

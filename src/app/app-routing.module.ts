@@ -6,8 +6,7 @@ import { FavoritesPageComponent } from './favorites-page/favorites-page.componen
 
 
 const routes: Routes = [
-  {path:'', component:SearchCriteriaComponent},
-  {path: 'recipes/recipe:id', component:RecipeListComponent},
+  {path: '', component:RecipeListComponent},
   {path:'favorites', component:FavoritesPageComponent}
 ];
 

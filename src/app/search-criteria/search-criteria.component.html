@@ -1,31 +1,28 @@
-
 <div>
       <form class="criteria">
-          <div id="keyword">
-              <h4>Search Keyword</h4>
-              <input [(ngModel)]="userInput" name="userInput" type="text" placeholder="Find a recipe">
+          <div class="keyword">
+              <h4>Search Keyword :</h4>
+              <input id="input" [(ngModel)]="userInput" name="userInput" type="textarea" placeholder="Find a recipe">
           </div>
           <div class="cals">
               <h4>Calories</h4>
-              <input type="number" [(ngModel)]="calories" name="calories" min="1" max="2000">
+              <input id="calories" type="number" [(ngModel)]="calories" name="calories" min="1" max="2000">
           </div>
           <div class="dietTitle">
               <h4>Dietary Restrictions</h4>
           </div>
           <div class="restrictions">
-              <input type="checkbox" [(ngModel)]="gf" name="gf" value="GF">Gluten Free<br>
               <input type="checkbox" [(ngModel)]="vegetarian" name="vegetarian" value="VG">Vegetarian<br>
               <input type="checkbox" [(ngModel)]="vegan" name="vegan" value="VN">Vegan<br>
-              <input type="checkbox" [(ngModel)]="df" name="df" value="DF">Dairy Free<br>
+              <input type="checkbox" [(ngModel)]="treenuts" name="Tree-Nut-Free" value="dairy">Tree Nuts<br>
           </div>
           <div class="sendIt">
-              <button (click)= "onSubmit(userInput, calories, gf, vegetarian, vegan, df)" type="button">Search</button>
+              <button (click)= "onSubmit(userInput, calories,vegetarian,vegan,treenuts)" type="button">Search</button>
           </div>
       </form>
-  </div>
-
-<div>
-  <app-recipe-list></app-recipe-list>
 </div>
 
 
+
+
+   

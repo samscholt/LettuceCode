@@ -1,9 +1,11 @@
-<p>results will go here</p>
-<div class="card" *ngFor="let recipe of recipes">
-    <img src=>"{{ recipe.thumbnail }}">
-    <div class="card-body">
-        <p>{{ recipe.selfText }}</p>
-        <p>{{ recipe.calories }}</p>
-        <p> {{ recipe.diet }} </p>
-        <a href="{{ recipe.url }}" class="btn">See Original Post</a>
+<app-search-criteria (submitted)= "onSubmit($event)">
+
+</app-search-criteria>
+
+
+<div class="container">
+   <h2 *ngIf="loading">Loading .....</h2>
+   <h2 *ngIf="noData">No Recipes Found for Those Restrictions, Try Again.</h2>
+   <app-recipe-details *ngFor="let recipe of recipes" [recipe]= 'recipe'></app-recipe-details>
+ 
 </div>

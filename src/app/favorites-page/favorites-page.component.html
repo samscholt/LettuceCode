@@ -1,1 +1,7 @@
-<p>favorites-page works!</p>
+<h1>My Favorites</h1>
+
+<div class="container">
+    <h2 *ngIf="loading">Loading .....</h2>
+    <app-recipe-details *ngFor="let recipe of Recipe.favorites" [recipe]= 'recipe'></app-recipe-details>
+  
+</div>

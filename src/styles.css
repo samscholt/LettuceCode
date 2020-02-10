@@ -1,1 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: rgb(46,193,176);
+    background: linear-gradient(90deg, rgba(46,193,176,0.9961344107038024) 3%, rgba(108,214,116,1) 85%);
+}
+
+a {
+    text-decoration: none;
+}
+
+.btn {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+}

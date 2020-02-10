@@ -1,0 +1,15 @@
+<div class="card" >
+    <img src="{{ recipe.recipe.image}}">
+    <div class="card-body">
+        <p id="title">{{recipe.recipe.label}}</p>
+        <i [ngClass]="{'heart': isAFavorite(recipe)}" class=" heart fas fa-heart" (click)="toggleFavorite(recipe)"></i>
+        <button id= "details"(click)= 'showDetails()'>More Details</button>
+    </div>
+    <div class= 'details' *ngIf="show">
+        <p> <strong>Ingredients:</strong> {{ recipe.recipe.ingredientLines }}</p>
+        <p> <strong>Calories/serving:</strong> {{ recipe.recipe.calories / recipe.recipe.yield | number: '1.0-0'}} </p>
+        <p>{{recipe.healthLabels}}</p>
+        <a href="{{ recipe.recipe.url }}" target="_blank" class="btn btn-primary">See Original Post</a>
+        <button (click)= 'closeDetails()'> Close</button>
+    </div>
+</div>
