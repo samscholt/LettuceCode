@@ -14,6 +14,7 @@ export class RecipeListComponent implements OnInit {
   userInput : any;
   recipes=[];
    loading= false;
+   noData= false;
   ngOnInit() {
   }
 
@@ -21,11 +22,17 @@ export class RecipeListComponent implements OnInit {
 
   onSubmit({userInput, calories,vegetarian,vegan, treenuts}){
     this.loading =true
+    this.noData = false;
    this.Recipe.getRecipes(userInput,calories,vegetarian,vegan, treenuts).subscribe( (data:any) => {
      this.recipes = data.hits
      this.loading=false
    })
    
+   if(!this.recipes.length){
+     this.noData = true;
+   }else if(this.recipes.length){
+     this.noData = false;
+   }
     
   }
 
