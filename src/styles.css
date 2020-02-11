@@ -24,7 +24,9 @@ a {
     display: flex;
     font-size: 16px;
     border-radius: 5px;
+    justify-content: center;
 }
+
 
 .card {
     display: flex;
@@ -34,3 +36,4 @@ a {
 img {
     object-fit: contain;
 }
+

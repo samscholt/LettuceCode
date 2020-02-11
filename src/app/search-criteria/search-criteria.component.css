@@ -78,8 +78,6 @@ form{
     opacity: 95%;
 }
 
-
-
 .cals{
     justify-content: center;
 }
@@ -92,6 +90,7 @@ form{
 
 .restrictions{
     justify-content: space-between;
+    width: 23rem;
 }
 
 div button{

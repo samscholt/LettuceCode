@@ -5,16 +5,20 @@
 .heart{
     color: red;
 }
+
 #details{
     font-size: 15px;
     margin-left: 20px;
+    height: 30px;
+    border-radius: 5px;
+    width: 100px;
 }
 
 #title{
     font-size: 20px;
     margin-bottom: 15px;
- 
 }
+
 .card{
     display: flex;
     justify-content: center;
@@ -22,7 +26,7 @@
     margin:0 auto;
     padding: 20px;
     background-color: white;
-    width: 40rem;
+    width: 45rem;
     border-radius: 5px;
     margin-bottom: 20px;
 }
