@@ -17,7 +17,7 @@ import { RecipeDetailsComponent } from './recipe-details/recipe-details.componen
     RecipeListComponent,
     FavoritesPageComponent,
     RecipeDetailsComponent,
-  
+    
   ],
   imports: [
     BrowserModule,
